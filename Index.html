@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>France Tunisie Express</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f5f8;
+  margin: 0;
+  color: #172b46;
+}
+header {
+  background: #102b4e;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+main {
+  max-width: 500px;
+  margin: 25px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+}
+input, select, button {
+  width: 100%;
+  padding: 13px;
+  margin: 9px 0;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+button {
+  background: #f28c28;
+  color: white;
+  border: 0;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>France Tunisie Express</h1>
+<p>Transport de colis entre la France et la Tunisie</p>
+</header>
+<main>
+<h2>Demander un transport</h2>
+<form>
+<input placeholder="Ville de départ" required>
+<input placeholder="Ville d'arrivée" required>
+<input type="number" placeholder="Poids en kg" min="1" required>
+<select>
+<option>Type de marchandise</option>
+<option>Colis</option>
+<option>Vêtements</option>
+<option>Autres marchandises</option>
+</select>
+<input type="date">
+<button type="button">Envoyer ma demande</button>
+</form>
+</main>
+</body>
+</html>
