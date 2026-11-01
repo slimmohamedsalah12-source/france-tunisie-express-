@@ -36,4 +36,46 @@ button{background:#ff9d24;color:#12345a;font-weight:bold;border:0}
 </div>
 </main>
 </body>
-</html>
+</html><section style="max-width:600px;margin:30px auto;padding:20px;background:white;border-radius:12px;font-family:Arial">
+<h2 style="color:#12345a">Inscription transporteur professionnel</h2>
+
+<form onsubmit="event.preventDefault();alert('Demande envoyée !')">
+<input required placeholder="Nom de l'entreprise" style="width:100%;padding:12px;margin:7px 0">
+<input required type="email" placeholder="Adresse e-mail" style="width:100%;padding:12px;margin:7px 0">
+<input required type="tel" placeholder="Téléphone" style="width:100%;padding:12px;margin:7px 0">
+<input required placeholder="Numéro SIRET" style="width:100%;padding:12px;margin:7px 0">
+<input required placeholder="Licence de transport" style="width:100%;padding:12px;margin:7px 0">
+<input required placeholder="Assurance professionnelle" style="width:100%;padding:12px;margin:7px 0">
+<button style="width:100%;padding:14px;background:#ff9d24;border:0;font-weight:bold">Envoyer ma demande</button>
+</form>
+</section><section style="max-width:600px;margin:30px auto;padding:20px;background:white;border-radius:12px;font-family:Arial">
+<h2 style="color:#12345a">Offre de transport</h2>
+
+<form onsubmit="event.preventDefault();alert('Offre envoyée avec succès !')">
+<input required placeholder="Nom de la société" style="width:100%;padding:12px;margin:7px 0">
+
+<input required type="number" min="0.01" step="0.01" id="prix" placeholder="Prix par kg (€)" style="width:100%;padding:12px;margin:7px 0">
+
+<input required type="number" min="1" id="poids" placeholder="Poids du colis (kg)" style="width:100%;padding:12px;margin:7px 0">
+
+<input required placeholder="Délai de livraison" style="width:100%;padding:12px;margin:7px 0">
+
+<p id="resultat">Commission plateforme : 10%</p>
+
+<button type="button" onclick="
+let p=Number(document.getElementById('prix').value);
+let w=Number(document.getElementById('poids').value);
+if(p>0 && w>0){
+let total=p*w;
+document.getElementById('resultat').innerHTML=
+'Prix total : '+total.toFixed(2)+' €<br>Commission (10%) : '+(total*.1).toFixed(2)+' €<br>Transporteur (90%) : '+(total*.9).toFixed(2)+' €';
+}else{alert('Veuillez saisir le prix et le poids');}
+" style="width:100%;padding:13px;background:#12345a;color:white;border:0;border-radius:7px">
+Calculer le prix et la commission
+</button>
+
+<button type="submit" style="width:100%;padding:13px;margin-top:10px;background:#ff9d24;border:0;border-radius:7px;font-weight:bold">
+Envoyer l'offre
+</button>
+</form>
+</section>
