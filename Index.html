@@ -5,60 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>France Tunisie Express</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f3f5f8;
-  margin: 0;
-  color: #172b46;
-}
-header {
-  background: #102b4e;
-  color: white;
-  padding: 25px;
-  text-align: center;
-}
-main {
-  max-width: 500px;
-  margin: 25px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 12px;
-}
-input, select, button {
-  width: 100%;
-  padding: 13px;
-  margin: 9px 0;
-  box-sizing: border-box;
-  border-radius: 7px;
-}
-button {
-  background: #f28c28;
-  color: white;
-  border: 0;
-  font-weight: bold;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fa;color:#172b45}
+header{background:#102b4e;color:white;padding:25px 15px;text-align:center}
+header h1{margin:0;color:#ff9d32}
+header p{margin:10px 0 0}
+main{max-width:650px;margin:25px auto;padding:15px}
+.card{background:white;padding:22px;border-radius:14px;box-shadow:0 3px 15px #0001}
+h2{color:#102b4e}
+label{display:block;margin-top:15px;font-weight:bold}
+input,select,textarea{width:100%;padding:13px;margin-top:7px;border:1px solid #ccd5df;border-radius:8px;font-size:16px}
+button{background:#f28c28;color:white;border:0;padding:15px;width:100%;margin-top:22px;border-radius:8px;font-size:17px;font-weight:bold}
+footer{text-align:center;padding:25px;color:#667}
 </style>
 </head>
 <body>
 <header>
 <h1>France Tunisie Express</h1>
-<p>Transport de colis entre la France et la Tunisie</p>
+<p>Votre transport entre la France et la Tunisie</p>
 </header>
 <main>
+<div class="card">
 <h2>Demander un transport</h2>
-<form>
-<input placeholder="Ville de départ" required>
-<input placeholder="Ville d'arrivée" required>
-<input type="number" placeholder="Poids en kg" min="1" required>
-<select>
-<option>Type de marchandise</option>
+<form onsubmit="event.preventDefault();alert('Votre demande a été préparée. Contactez notre équipe pour la confirmer.');">
+<label>Ville de départ</label>
+<input required placeholder="Ex : Paris">
+<label>Ville d'arrivée</label>
+<input required placeholder="Ex : Tunis">
+<label>Type de marchandises</label>
+<select required>
+<option value="">Choisir</option>
 <option>Colis</option>
 <option>Vêtements</option>
+<option>Effets personnels</option>
 <option>Autres marchandises</option>
 </select>
-<input type="date">
-<button type="button">Envoyer ma demande</button>
+<label>Poids (kg)</label>
+<input type="number" min="1" required placeholder="Ex : 20">
+<label>Date d'enlèvement</label>
+<input type="date" required>
+<label>Date de livraison souhaitée</label>
+<input type="date" required>
+<label>Description</label>
+<textarea placeholder="Informations complémentaires"></textarea>
+<button type="submit">Envoyer ma demande</button>
 </form>
+</div>
 </main>
+<footer>© 2026 France Tunisie Express</footer>
 </body>
 </html>
